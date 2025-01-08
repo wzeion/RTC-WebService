@@ -20,6 +20,11 @@ function App2() {
       setAnswer(response.response.text());
       
     }
+
+    async function Speaking(){
+      let utterance = new SpeechSynthesisUtterance(answer);
+      window.speechSynthesis.speak(utterance);
+    }
     
     return (
       <>
@@ -28,6 +33,7 @@ function App2() {
         </h1>
         <textarea value={question} onChange={(e)=>setQuestion(e.target.value)} cols="30" rows="10"></textarea>
         <button onClick={generateAnswer}>Generate Answer</button>
+        <button onClick={Speaking}>Speak</button>
         <p>AI Answer:{answer}</p>
       </>
     )
