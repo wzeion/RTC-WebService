@@ -1,6 +1,6 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("");
+const genAI = new GoogleGenerativeAI("AIzaSyAiWHaxNnKZWDsIyhiRBQhasmh2F46AlX0");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const prompt = "How can i walk on water?";
