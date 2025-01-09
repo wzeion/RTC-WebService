@@ -11,7 +11,7 @@ function App() {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
   const genAI = new GoogleGenerativeAI("AIzaSyDPh8se8XrI0ap-Kx9XkQCLbQCFYp0v1Jw");
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   const request = "(give answer not so detailed, like human, and ask question in return like a human or you can give a random fact)";
 
   function startListening(){
