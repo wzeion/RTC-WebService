@@ -1,0 +1,4 @@
+1. Open terminal, type "cd Appv1/"
+2. If its your latest fork inside terminal do "npm install"
+3. Once installed run by typing "npm run dev" inside the Appv1 directory.
+4. Open the link using ctrl+left click.
