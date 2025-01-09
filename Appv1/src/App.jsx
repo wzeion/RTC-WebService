@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 function App() {
-  const [text, setText] = useState("");  
+  const [text, setText] = useState(""); 
   const [answer, setAnswer] = useState(""); 
   
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
@@ -21,7 +21,6 @@ function App() {
     recognition.start();
   }
 
-
   recognition.onresult = (event) => {
     const transcript = event.results[0][0].transcript;
     console.log(transcript);
@@ -29,12 +28,10 @@ function App() {
     generateAnswer(transcript);
   };
 
-
   async function generateAnswer(question) {
     const response = await model.generateContent(question + request);
     console.log(response.response.text());
     setAnswer(response.response.text());
-
 
     async function speaking(question) {
       let utterance = new SpeechSynthesisUtterance(question);
@@ -47,11 +44,10 @@ function App() {
     speaking(response.response.text());
   }
 
-
   function stopListening() {
     recognition.abort();
     window.speechSynthesis.cancel();
-    navigate("/chat");
+    navigate("/chat"); 
   }
 
   return (
@@ -64,3 +60,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

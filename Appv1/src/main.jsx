@@ -5,6 +5,7 @@ import App from './App';
 import ChatInterface from './ChatInterface';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// Render routes with Router
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
