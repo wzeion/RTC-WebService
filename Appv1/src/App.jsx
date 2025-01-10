@@ -1,9 +1,10 @@
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
+import './styles/App.css'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import ChatHistory from './chatHistory';
 
 function App() {
   const [text, setText] = useState(""); 
@@ -15,7 +16,7 @@ function App() {
   const recognition = new SpeechRecognition();
   const genAI = new GoogleGenerativeAI("AIzaSyDPh8se8XrI0ap-Kx9XkQCLbQCFYp0v1Jw");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-  const request = "(give answer not so detailed, like human, and ask question in return like a human or you can give a random fact)";
+  const request = "(give answer not so detailed, like human, and ask question in return like a human. also give unique answers)";
 
   function startListening() {
     recognition.start();
@@ -46,15 +47,33 @@ function App() {
 
   function stopListening() {
     recognition.abort();
+    window.speechSynthesis.pause();
     window.speechSynthesis.cancel();
     navigate("/chat"); 
   }
 
   return (
-    <>
-      <h1>Chat Bot</h1>
-      <button onClick={startListening}>Mic On</button>
-      <button onClick={stopListening}>Mic Off</button>
+    <>  <div>
+      
+        </div>
+        <div className='chatArea'>
+          <h1>Chat Bot</h1>
+          <button onClick={startListening} class="button">
+            <span className="shadow"></span>
+            <span className="edge"></span>
+            <div className="front">
+              <span>Mic On</span>
+            </div>
+          </button>
+
+          <button onClick={stopListening} class="button">
+            <span className="shadow"></span>
+            <span className="edge"></span>
+            <div className="front">
+              <span>Mic Off</span>
+            </div>
+          </button>
+        </div>
     </>
   );
 }
