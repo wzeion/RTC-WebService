@@ -71,29 +71,32 @@ body {
   margin-bottom: 10px;
 }
 
-.messageInput {
-  display: flex;
-  padding: 10px;
-  background-color: #020d45; /* Slightly darker red for contrast */
-  gap: 10px;
+.messageinput {
+    width: 80%;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-.messageInput input {
-  flex-grow: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+.send-button {
+
+    position: absolute; /* Allows placement relative to the container */
+    bottom: 0; /* Aligns to the bottom edge */
+    right: 0; /* Aligns to the right edge */
+    
+    border-radius: 9px;
+    background: #6dff2e;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-bottom: 20px;
+    height: 45px;
 }
 
-.messageInput button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  background-color: rgb(1, 28, 74);
-  color: rgb(236, 236, 236);
-  font-weight: bold;
-  transition: background-color 0.3s;
+.send-button:hover {
+    box-shadow: 7px 5px 56px -14px #a1f87c;
 }
 .messageInput button:hover {
   background-color: rgba(0, 3, 68, 0.899);
