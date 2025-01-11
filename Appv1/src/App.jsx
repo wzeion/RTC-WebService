@@ -53,7 +53,8 @@ function App() {
   }
 
   return (
-    <>  <div>
+        <div className='root'>  
+        <div>
           <ChatHistory/>
         </div>
         <div className='chatArea'>
@@ -74,7 +75,7 @@ function App() {
             </div>
           </button>
         </div>
-    </>
+    </div>
   );
 }
 

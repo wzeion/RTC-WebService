@@ -55,17 +55,45 @@ body {
 .chatItem:hover {
     background-color: #222ced3d;
 }
-
-.chatInterface {
-    background-color: rgb(1, 28, 74);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-    padding: 0;
+/*diff*/
+.chat-box {
+margin-bottom: 20px;
+max-height: 500px;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
 }
 
+.chat-message {
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 10px;
+max-width: 60%;
+word-wrap: break-word;
+}
+
+.user-message {
+background-color: #1a42a9dd;
+align-self: flex-end; /* User messages */
+color: #f0f0f0; /* Monochromatic text color */
+}
+
+.ai-message {
+background-color: #112fc6ea;
+align-self: flex-start; /* AI messages */
+color: #e0e0e0; /* Monochromatic text color */
+}
+.chatInterface {
+display: grid;
+grid-column-start: 2;
+background-color: rgb(1, 28, 74);
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+color: white;
+padding: 0;
+}
 .chatTitle {
     font-size: 24px;
     margin-bottom: 10px;

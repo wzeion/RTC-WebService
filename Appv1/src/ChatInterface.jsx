@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './styles/ChatInterface.css';
-import chatHistory from "./chatHistory";
+import ChatHistory from "./chatHistory";
 
 function ChatInterface() {
   const [userMessage, setUserMessage] = useState(""); // User's typed message
@@ -38,12 +38,11 @@ function ChatInterface() {
   };
 
   return (
-    <div>
-    <div>
-      <chatHistory/>
-    </div>
-    <div className="chat-interface">
-      <h1>Chat Interface</h1>
+    <div className="root">
+      <ChatHistory/>
+    <div className="chatInterface">
+      <h1 class="chatTitle" id="chatTitle">Select a Chat</h1>
+      
       <div className="chat-box">
         {chatHistory.map((chat, index) => (
           <div
@@ -64,20 +63,40 @@ function ChatInterface() {
           </div>
         )}
       </div>
-      <div className="input-section">
-        <div class="textInputWrapper">
+     
+      <div class="messageInput">
+        <div class="form-control">
           <input 
-            placeholder="Type your message..." 
-            type="text" 
-            class="textInput"
+            class="input input-alt" 
+            placeholder="Type something here..." 
+            type="text"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
+            onKeyDown={handleKeyPress}/>
+          <span class="input-border input-border-alt"></span>
         </div>
-        <button onClick={sendMessage} className="send-button">Send</button>
+        <button 
+          class="Send"onclick="sendMessage()"
+          onClick={sendMessage} className="send-button">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Send</span>
+        </button>
       </div>
-      
     </div>
     </div>
   );

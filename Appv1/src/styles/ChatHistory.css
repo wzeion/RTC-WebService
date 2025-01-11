@@ -1,0 +1,51 @@
+.chatHistory {
+    display: grid;
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 52);
+    height: 97vh;
+    color: white;
+}
+
+.newChatButton {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(3, 16, 88);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.newChatButton:hover {
+    background-color: lightblue;
+}
+
+.chatList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chatItem {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: rgba(2, 0, 125, 0.658);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatItem:hover {
+    background-color: #222ced3d;
+}
