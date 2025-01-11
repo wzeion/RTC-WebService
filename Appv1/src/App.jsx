@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>  <div>
-      
+          <ChatHistory/>
         </div>
         <div className='chatArea'>
           <h1>Chat Bot</h1>
