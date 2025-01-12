@@ -52,7 +52,6 @@ button {
   font-family: sans-serif;
 }
 
-/* Shadow layer */
 .button .shadow {
   position: absolute;
   top: 0;
@@ -65,7 +64,6 @@ button {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
-/* Edge layer */
 .button .edge {
   position: absolute;
   top: 0;
@@ -82,7 +80,6 @@ button {
   );
 }
 
-/* Front layer */
 .button .front {
   position: relative;
   display: flex;
@@ -97,7 +94,6 @@ button {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
-/* Hover and active states */
 .button:hover .shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
@@ -118,7 +114,6 @@ button {
   transition: transform 34ms;
 }
 
-/* Disable text selection */
 .button .front span {
   user-select: none;
 }
@@ -142,7 +137,6 @@ button {
   margin-top: 20px;
 }
 
-/* Listening Button Animation */
 .button.listening {
   animation: pulseRing 1.5s infinite;
 }
@@ -163,7 +157,6 @@ button {
   background-color: hsl(140, 80%, 40%);
 }
 
-/* Transcript Button */
 .transcript-button {
   position: fixed;
   bottom: 20px;
@@ -185,7 +178,6 @@ button {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Layout adjustments for transcript */
 .root.with-transcript .chatArea {
   margin-right: 300px;
 }
