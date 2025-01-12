@@ -1,30 +1,27 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom"; 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './styles/ChatInterface.css';
 import ChatHistory from "./chatHistory";
 
 function ChatInterface() {
-const [userMessage, setUserMessage] = useState(""); // User's typed message
-const [chatHistory, setChatHistory] = useState([]);  // Store conversation history
-const [isGenerating, setIsGenerating] = useState(false); // Track AI response generation
-const navigate = useNavigate(); // Initialize navigate function
+const [userMessage, setUserMessage] = useState(""); 
+const [chatHistory, setChatHistory] = useState([]); 
+const [isGenerating, setIsGenerating] = useState(false); 
+const navigate = useNavigate(); 
 
 const genAI = new GoogleGenerativeAI("AIzaSyDPh8se8XrI0ap-Kx9XkQCLbQCFYp0v1Jw");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const request = "(give answer not so detailed, like human, and ask question in return like a human. also give unique answers)";
 
-// Send message function
 const sendMessage = async () => {
   if (userMessage.trim() !== "") {
     setChatHistory([...chatHistory, { sender: "You", message: userMessage }]);
-    setUserMessage("");  // Clear input field
-    setIsGenerating(true); // Show loading animation
+    setUserMessage(""); 
+    setIsGenerating(true);
     
-    // Get AI response
     const response = await model.generateContent(userMessage + request);
-    setIsGenerating(false); // Hide loading animation
-    
+    setIsGenerating(false);
     setChatHistory((prev) => [
       ...prev,
       { sender: "AI", message: response.response.text() },
@@ -32,7 +29,6 @@ const sendMessage = async () => {
   }
 };
 
-// Handle Enter key press to send the message
 const handleKeyPress = (e) => {
   if (e.key === "Enter") {
     sendMessage();
