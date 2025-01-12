@@ -162,3 +162,60 @@ button {
 .button.listening .front {
   background-color: hsl(140, 80%, 40%);
 }
+
+/* Transcript Button */
+.transcript-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: hsl(217, 33%, 32%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  z-index: 1000;
+}
+
+.transcript-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Layout adjustments for transcript */
+.root.with-transcript .chatArea {
+  margin-right: 300px;
+}
+
+.transcript {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: rgb(240, 240, 240);
+  border-left: 2px solid hsl(217, 33%, 32%);
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.chat-entry {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-entry p {
+  margin: 5px 0;
+}
+
+.chat-entry strong {
+  color: hsl(217, 33%, 32%);
+}
