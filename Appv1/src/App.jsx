@@ -58,24 +58,26 @@ function App() {
           <ChatHistory/>
         </div>
         <div className='chatArea'>
-          <h1>Chat Bot</h1>
-          <button onClick={startListening} class="button">
-            <span className="shadow"></span>
-            <span className="edge"></span>
-            <div className="front">
-              <span>Mic On</span>
-            </div>
-          </button>
-
-          <button onClick={stopListening} class="button">
-            <span className="shadow"></span>
-            <span className="edge"></span>
-            <div className="front">
-              <span>Mic Off</span>
-            </div>
-          </button>
+    <h1>Chat Bot</h1>
+    <div className="button-group">
+      <button onClick={startListening} className="button">
+        <span className="shadow"></span>
+        <span className="edge"></span>
+        <div className="front">
+          <span>Mic On</span>
         </div>
+      </button>
+
+      <button onClick={stopListening} className="button">
+        <span className="shadow"></span>
+        <span className="edge"></span>
+        <div className="front">
+          <span>Mic Off</span>
+        </div>
+      </button>
     </div>
+  </div>
+</div>
   );
 }
 
